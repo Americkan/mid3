@@ -11,9 +11,9 @@
 using namespace std;
 
 double getPonderal(double mass, double height);
-#ifdef POND
+
 double test(double ponderal, double realPonderal, double tolerance);
-#endif
+
 int main(int argc, char *argv[])
 {
 	//Set default values
@@ -181,7 +181,7 @@ int main(int argc, char *argv[])
 153.086627,  73.519693,   17.549677,
 153.086627,  75.267482,   17.826726,
 153.086627,  76.474839,   18.016858}; 
-	//Get command-line arguments
+	/*Get command-line arguments
 	if (argc < 3) {
 	cout << "No input was detected.                  \n";
 	cout << "                                        \n";
@@ -193,16 +193,16 @@ int main(int argc, char *argv[])
 	if (argc > 2)
 	height = atof(argv[2]);
 	cout << "Ponderal value is: ";
-#ifdef POND    
+   */
     if (argc > 0) 
     tolerance = atof(argv[1]);
-#endif
+
 	//This formatting will help for your unit test output
 	cout << setw(10) << left << fixed << setprecision(6);
 	cout << getPonderal(mass, height) << endl;
 	cout << endl;
 	//return(0);
-#ifdef POND
+
     cout << "mass         " << "height           " << "ponderal         " << "returned          " << endl;
     cout << "------------ " << "---------------  " << "---------------  " << "------------------" << endl;
     for(int i =0; i<479; i++) {
@@ -215,7 +215,7 @@ int main(int argc, char *argv[])
 
         i = i+2;
     }
-#endif
+
     return(0);   
 }
 
@@ -226,7 +226,7 @@ double getPonderal(double mass, double height)
 	double ponderal = height / cuberoot;
 	return ponderal;
 }
-#ifdef POND
+
 double test(double ponderal, double realPonderal, double tolerance)
 {
     double upperBounds = realPonderal + tolerance;
@@ -244,5 +244,5 @@ double test(double ponderal, double realPonderal, double tolerance)
 
 }
 
-#endif
+
 
